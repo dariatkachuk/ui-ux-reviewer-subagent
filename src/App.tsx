@@ -20,20 +20,16 @@ export default function App() {
 
   return (
     <>
-      {/* Fixed nav in top-right corner */}
+      {/* Full-width nav bar */}
       <div style={{
-        position: 'fixed', top: 0, right: 0, zIndex: 9999,
+        position: 'fixed', top: 0, left: 0, right: 0, zIndex: 9999,
         display: 'flex', alignItems: 'center', gap: 4,
-        padding: '6px 12px', background: '#1e293b', borderBottomLeftRadius: 8,
+        padding: '6px 12px', background: '#1e293b',
       }}>
-        {activeDemo !== null && (
-          <button onClick={() => setActiveDemo(null)} style={navBtnStyle(null)}>
-            ← App
-          </button>
-        )}
-        {activeDemo !== null && (
-          <span style={{ color: '#475569', fontSize: 13 }}>|</span>
-        )}
+        <button onClick={() => setActiveDemo(null)} style={navBtnStyle(null)}>
+          Home
+        </button>
+        <span style={{ color: '#475569', fontSize: 13 }}>|</span>
         <button onClick={() => setActiveDemo('button')} style={navBtnStyle('button')}>
           Button
         </button>
@@ -48,7 +44,7 @@ export default function App() {
       </div>
 
       {activeDemo === null && (
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '100vh', fontFamily: 'sans-serif', color: '#718096' }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '100vh', paddingTop: 40, fontFamily: 'sans-serif', color: '#718096' }}>
           <p>Your app content goes here.</p>
         </div>
       )}
